@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dominos.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class=" fa-user-secret"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-info btn-sm right lgout">Logout</a>
+        <a href="#popup1" class="btn btn-info btn-sm right info">Info</a>
+    </div>
+        <div class="text-center">
+        <a href="/play" class="btn btn-default btn-sm">Play Game</a>
+        </div>
+    <div class="row profile-wrapper">
+        
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <!-- <div class="well"> -->
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.email %><br>
+                        <!-- <strong>password</strong>: <%= user.local.password %> -->
+                    </p>
+
+            <!-- </div> -->
+        </div>
+
+        <!-- FACEBOOK INFORMATION -->
+        <div class="col-sm-6">
+            <!-- <div class="well"> -->
+                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+
+                    <p>
+                        <strong>id</strong>: <%= user.facebook.id %><br>
+                        <!-- <strong>token</strong>: <%= user.facebook.token %><br> -->
+                        <strong>email</strong>: <%= user.email %><br>
+                        <strong>name</strong>: <%= user.facebook.name %>
+                    </p>
+
+            <!-- </div> -->
+        </div>
+
+    </div>
+    
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <h2>How to play</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            <h3>Setup</h3>
+            <p>To start each player draws 7 tiles.</p>
+            <h3>Gameplay</h3>
+            <p>Each player adds a domino to an open end of the game layout, if he can.</p>
+            <h3>Drawing</h3>
+            <p>If a player is unable to play, he must pass. Drawing from the boneyard is not allowed.</p>
+            <h3>Score and Winning</h3>
+            <p>A round ends when a player played all his tiles or when the game is blocked (no player is able to make a move). The player with the empty or lightest hand winds the round. In case of a tie, the player with the lightest individual tile wins. The winner of the round scores the number of points in all of his opponents hands.</p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
